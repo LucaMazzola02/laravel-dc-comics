@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Welcome')
+@section('title', 'Comics List')
 
 @section('main-content')
     <h1 class="text-center m-5">
-        Benvenuto/a !!!!!
+       Comics
     </h1>
 @endsection
