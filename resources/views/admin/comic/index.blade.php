@@ -21,6 +21,7 @@
                         <th scope="col">Series</th>
                         <th scope="col">sale_date</th>
                         <th scope="col">Type</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,7 +41,25 @@
                             </td>
                             <td>
                                 {{ $comic->type  }}
-                            </td>                       
+                            </td>  
+                            <td>
+                                <a class="btn btn-sm btn-primary me-2"
+                                    href="{{ route('admin.comics.show', $comic->id) }}">
+                                    View
+                                </a>
+                                <a class="btn btn-sm btn-success me-2"
+                                    href="{{ route('admin.comics.edit', $comic->id) }}">
+                                    Edit
+                                </a>
+                                <form action="{{ route('admin.comics.destroy', $comic->id) }}" class="d-inline form-terminator" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn btn-sm btn-warning me-2">
+                                        Delete
+                                    </button>
+                                </form>
+                            </td>                     
                         </tr>
                     @endforeach
                 </tbody>
